@@ -1,0 +1,530 @@
+* {
+    margin: 0;
+    padding: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+body {
+    -moz-user-select: none;
+
+}
+
+.disclaimer{
+    display: none;
+}
+
+div {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -webkit-transform: translateZ(0);
+}
+
+* {font-size: 100%;}
+div {position: absolute;}
+sup {line-height: 0px;}
+sub {line-height: 0px;}
+b {font-weight: 700;}
+i {font-style: italic;}
+u {text-decoration: underline;}
+a {text-decoration: none;}
+
+#mainContainer {
+    width: 728px;
+    height: 90px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+#container {
+    width: 728px;
+    height: 90px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border: solid 2px #76BC21;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* -------------------- GENERAL CSS -------------------- */
+
+#green_border {
+    border:2px solid #76BC21;
+    width: 722px;
+    height: 84px;
+
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.hotspot,.hotspot1 {
+    position:absolute;width:728px;height:90px;cursor:pointer;left: -1px;top: -1px;
+}
+
+#hotspot2 {
+    top: 0px;
+}
+
+.wrapper {
+    width: 728px;
+    height: 90px;
+    top: -2px;
+    left: -2px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.adSize {
+    width: 728px;
+    height: 90px;
+    top: 0px;
+    left: 0px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.notoBold {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+}
+
+.openBold {
+    font-family: 'Open Sans', sans-serif ;
+    font-weight: 700;
+}
+
+.trans {
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.fadeUp {
+    opacity: 0;
+    transform: translateY(10px);
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.quickBold {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+}
+
+.firaMed {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 500;
+}
+
+.robotoCondensedReg {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+
+.robotoCondensedBold {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+}
+
+/* -------------------- FRAMEs -------------------- */
+
+#frame1 {
+    width: 378px;
+    height: 90px;
+    box-sizing: border-box;
+    overflow: hidden;
+    visibility: hidden;
+
+    -webkit-transition: opacity  1s ease-out;
+    -moz-transition: opacity  1s ease-out;
+    transition: opacity  1s ease-out;
+}
+
+#bg_f1 {
+    top: 0px;
+    left: 0px;
+}
+
+#f1_copy {
+    font-size: 20px;
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    left: 11px;
+    letter-spacing: -0.2px;
+    line-height: 19px;
+}
+
+#f1_footer {
+    font-size: 10px;
+    color: #ffffff;
+    position: absolute;
+    top: 45px;
+    left: 325px;
+    line-height: 11px;
+    letter-spacing: 0px;
+}
+
+#f2_copy {
+    font-size: 17px;
+    color: #636466;
+    position: absolute;
+    top: 18px;
+    left: 13px;
+    letter-spacing: -0.2px;
+    line-height: 16px;
+}
+
+#f2_footer {
+    font-size: 10px;
+    color: #636466;
+    position: absolute;
+    top: 75px;
+    left: 13px;
+    line-height: 11px;
+    letter-spacing: 0px;
+}
+
+#f3_copy {
+    font-size: 18px;
+    color: #636466;
+    position: absolute;
+    top: 16px;
+    left: 19px;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+}
+
+#f3_copy sup {
+    font-size: 11px;
+    position: relative;
+    top: 1px;
+}
+
+#f4_copy {
+    font-size: 18px;
+    color: #636466;
+    position: absolute;
+    top: 18px;
+    left: 21px;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+}
+
+#f5_copy1 {
+    font-size: 18px;
+    color: #636466;
+    position: absolute;
+    top: 17px;
+    left: 22px;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+}
+
+#f5_copy2 {
+    font-size: 14px;
+    color: #76BC21;
+    position: absolute;
+    top: 61px;
+    left: 22px;
+    letter-spacing: -0.17px;
+    line-height: 20px;
+}
+
+#cta {
+    position: absolute;
+    width: 86px;
+    height: 19px;
+    top: 16px;
+    left: 267px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+#ctaText {
+    position: absolute;
+    font-size: 10px;
+    color: #ffffff;
+    top: 3px;
+    left: 4px;
+}
+
+/* -------------------- ISI -------------------- */
+
+#isiHeader {
+    width: 240px;
+    height: 25px;
+    top: 0px;
+    background-color: #ffffff;
+    font-family: 'Noto Sans', sans-serif;
+    -webkit-transform: translate(487px, 0px);
+    -moz-transform: translate(487px, 0px);
+    -ms-transform: translate(487px, 0px);
+    -o-transform: translate(487px, 0px);
+    transform: translate(487px, 0px);
+}
+
+#ihText {
+    top: 7px;
+    left: 28px;
+    letter-spacing: 0px;
+    color: #76BC21;
+    font-size: 11px;
+}
+
+#scrollBg {
+    width: 5px;
+    height: 38px;
+    right: 0px;
+    top: 30px;
+    height: 38px;
+    background-color: #F3F0EF;
+    /* border: 1px solid #c1c1c1; */
+
+  -webkit-transform: translate(484px, 0px);
+  -moz-transform: translate(484px, 0px);
+  -ms-transform: translate(484px, 0px);
+  -o-transform: translate(484px, 0px);
+  transform: translate(484px, 0px);
+}
+
+#scrollBar {
+width: 5px;
+height: 6px;
+background-color: #BABABA;
+cursor: pointer;
+
+  -webkit-transform: translate(1px, 1px);
+  -moz-transform: translate(1px, 1px);
+  -ms-transform: translate(1px, 1px);
+  -o-transform: translate(1px, 1px);
+  transform: translate(1px, 1px);
+}
+  
+  .headertxt {
+    color: #76BC21;
+    font-size: 11px;
+    font-weight: 700;
+    /* letter-spacing: -0.1px; */
+    line-height: 11px;
+  }
+  
+  .bold_text {
+    color: #636466;
+    font-size: 11px;
+    line-height: 12px;
+    /* letter-spacing: -0.1px; */
+    padding-top: 5px;
+    font-weight: 700;
+  }
+
+  .reg_text {
+    color: #636466;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 12px;
+    /* letter-spacing: -0.1px; */
+    padding-top: 5px;
+  }
+  
+  .mainbullet {
+    color: #636466;
+    line-height: 12px;
+    padding-left:8px;
+    font-weight: 400;
+    font-size: 11px;
+    /* letter-spacing: -0.5px; */
+  }
+  
+  .bottom_isi_copy {
+    padding-top: 50px;
+    color: #636466;
+    line-height: 9px;
+    font-weight: 400;
+    font-size: 8px;
+    letter-spacing: -0.15px;
+  }
+  
+  .bullet {
+    color: #76BC21;
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+
+  .inline-bullet {
+    color: #76BC21;
+    position: relative;
+    top: 1px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
+  .isi_sup {
+    font-size: 6px;
+    position: relative;
+    top: 1px;
+  }
+
+  .isi_sub {
+    position: relative;
+    top: -2px;
+    font-size: 7px;
+  }
+
+#supernusLogo{
+    width: 124px;
+    height: 27px;
+    left: 13px;
+    bottom: 30px;
+    position: absolute !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#isiBtnP {
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    left: 7px;
+    top: 5px;
+    cursor: pointer;
+}
+
+#isiBtnM {
+    width: 15px;
+    height: 15px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    top: 5px;
+    left: 9px;
+    cursor: pointer;
+}
+
+#isiHeaderBottom {
+    width: 351px;
+    height: 17px;
+    bottom: 0px;
+    background-color: #007298;
+    visibility: hidden;
+
+    -webkit-transform: translate(378px, 0px);
+    -moz-transform: translate(378px, 0px);
+    -ms-transform: translate(378px, 0px);
+    -o-transform: translate(378px, 0px);
+    transform: translate(378px, 0px);
+}
+
+#ihTextBottom {
+    font-size: 10px;
+    top: 3px;
+    left: 16px;
+    color: #ffffff !important;
+}
+
+#ihFooterArrow {
+    width: 5px;
+    height: 9px;
+    top: 1px;
+    right: -21px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#IRI_mainContainer {
+    visibility: hidden;
+    /* opacity: 0; */
+}
+
+#isiContainer {
+      width: 240px;
+      height: 90px;
+      /* height: 2000px; */
+      overflow: hidden;
+      cursor: default;
+      background-color: #ffffff;
+      /* border-left: 1px solid #c1c1c1; */
+      font-family: 'Open Sans';
+      -webkit-transform: translate(486px, -1px);
+      -moz-transform: translate(486px, -1px);
+      -ms-transform: translate(486px, -1px);
+      -o-transform: translate(486px, -1px);
+      transform: translate(486px, -1px);
+}
+
+#isiContent {
+    width: 292px;
+    padding-left: 8px;
+
+
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+     -o-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+}
+
+
+
+
+/* Property Work's For FireFox Only */
+@-moz-document url-prefix() {
+    .isi_sub {
+        top: -1px;
+    }
+
+    .isi_sup {
+        top: 0px;
+    }
+}
+
+/* Property Work's For Internet Explorer Edge Only */
+@supports (-ms-ime-align: auto) {
+
+}
+
+/* Property Work's For Internet Explorer 11, 10 Only */
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
+
+}
+
+/* Property Work's For Safari Only */
+@media not all and (min-resolution:.001dpcm) { @media {
+
+    .isi_sup {
+        top: 0px;
+    }
+
+}}

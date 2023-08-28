@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nestle Waters BlueTriton Brands (Creative 3 - Adaptor)</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            background-repeat: no-repeat;
+        }
+
+        #labAd {
+            width: 300px;
+            height: 250px;
+            position: relative;
+            margin: 0 auto;
+            opacity: 1;
+            cursor: pointer;
+            overflow: hidden;
+            background-color: white;
+            /* border: 1px solid black; */
+
+            /*visibility: hidden;*/
+            -webkit-backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .disclaimer{
+			display: none;
+		}
+
+        .container {
+            position: absolute;
+            width: 300px;
+            height: 250px;
+            visibility: hidden;
+        }
+
+        .adSize {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 250px;
+            background-size: 300px 250px;
+            background-repeat: no-repeat;
+        }
+
+        .drops {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 250px;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .dropLeft {
+            transform: translateY(0%);
+            -webkit-animation: dropLeft 15s linear 2s forwards;
+            animation: dropLeft 15s linear 2s forwards;
+        }
+
+        .dropCenter {
+            transform-origin: 20% 50%;
+            transform: translate(-2%, -10%) rotate(0deg);
+            -webkit-animation: dropCenter 15s linear 2s forwards;
+            animation: dropCenter 15s linear 2s forwards;
+        }
+
+        .dropRight {
+            transform-origin: 20% 50%;
+            transform: translate(-1%, 0%) rotate(0deg);
+            -webkit-animation: dropRight 15s linear 2s forwards;
+            animation: dropRight 15s linear 2s forwards;
+        }
+
+        #fg {
+            background-size: 275px 222px;
+            background-repeat: no-repeat;
+            top: 28px;
+            left: 25px;
+        }
+
+        #waterFlow {
+            -webkit-clip-path: polygon(30% 69%, 42% 69%, 46% 76%, 55% 83%, 100% 97%, 100% 100%, 0% 100%, 0% 95%, 17% 85%, 23% 71%);
+            clip-path: polygon(30% 69%, 42% 69%, 46% 76%, 55% 83%, 100% 97%, 100% 100%, 0% 100%, 0% 95%, 17% 85%, 23% 71%);
+            filter: url("#turbulence");
+            opacity: 0.8;
+        }
+
+        #glare {opacity: 0.6;}
+        .cloudBack {width:338px; height: 131px; background-size: contain;}
+        .cloudFront {width:338px; height: 121px; background-size: contain;}
+        .fromCenter {transform: translate(0%, 0%);}
+        .fromLeft {transform: translate(-100%, 0%);}
+        .fromRight {transform: translate(100%, 0%);}
+
+        #shine {
+            position: absolute;
+            width: 30px;
+            height: 46px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 181px;
+            left: 174px;
+            transform: translateX(0px);
+            opacity: 0;
+            -webkit-transition: transform 1.5s ease, opacity .4s ease;
+            transition: transform 1.5s ease, opacity .4s ease;
+        }
+
+        #index{
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 112px;
+            height: 112px;
+            left: 158px;
+            top: 24px;
+            position: absolute;
+        }
+
+        #thirstlevel{
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 46px;
+            height: 21px;
+            position: absolute;
+            left: 191px;
+            top: 43px;
+        }
+        
+        #indicator{
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 60px;
+            height: 31px;
+        }
+
+        #indicator_container{
+            width: 60px;
+            height: 31px;
+            position: absolute;
+            left: 175px;
+            top: 71px;
+            transform-origin: 65% 32%;
+            transform: rotate(-149deg) translate(22px, -5px);
+        }
+
+        #meter{
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 110px;
+            height: 55px;
+            position: absolute;
+            top: 24px;
+            left: 158px;
+            -webkit-transform: translateZ(0);  /* for hardware acceleration */
+            transform: translateZ(0); /* for hardware acceleration */
+            will-change: clip-path;
+            -webkit-clip-path: polygon(0% 100%, 0 85%, 1% 82%, 3% 79%, 5% 79%, 6% 79%, 7% 80%, 8% 81%, 9% 86%, 9% 100%);
+            clip-path: polygon(0% 100%, 0 85%, 1% 82%, 3% 79%, 5% 79%, 6% 79%, 7% 80%, 8% 81%, 9% 86%, 9% 100%);
+        }
+
+        .indicatorAnim {
+            -webkit-animation: indicator 1s linear 1s forwards;
+            animation: indicator 1s linear 1s forwards;
+        }
+
+        .meterAnim{
+            -webkit-animation: meter 1s linear 1s forwards;
+            animation: meter 1s linear 1s forwards;
+        }
+
+        /* Animations */
+        @keyframes meter {
+          0% {clip-path: polygon(0% 100%, 0 85%, 1% 82%, 3% 79%, 5% 79%, 6% 79%, 7% 80%, 8% 81%, 9% 86%, 9% 100%);}
+          12.5% {clip-path: polygon(0% 100%, 0 60%, 4% 55%, 6% 53%, 8% 52%, 9% 51%, 11% 53%, 12% 56%, 12% 61%, 9% 100%);}
+          25% {clip-path: polygon(0 100%, 0 31%, 13% 31%, 15% 28%, 18% 27%, 20% 28%, 21% 31%, 21% 35%, 20% 39%, 18% 100%);}
+          37.5% {clip-path: polygon(0 100%, 0 0, 27% 7%, 31% 6%, 33% 6%, 35% 8%, 36% 12%, 36% 16%, 35% 22%, 33% 100%);}
+          50% {clip-path: polygon(0 100%, 0 0, 49% 0, 51% 1%, 53% 4%, 53% 6%, 53% 9%, 51% 13%, 49% 15%, 49% 100%);}
+          62.5% {clip-path: polygon(0 100%, 0 0, 64% 0, 66% 4%, 67% 9%, 67% 13%, 66% 16%, 65% 18%, 63% 18%, 63% 100%);}
+          75% {clip-path: polygon(0 100%, 0 0, 76% 1%, 78% 15%, 80% 18%, 81% 22%, 80% 27%, 78% 30%, 76% 30%, 76% 100%);}
+          87.5% {clip-path: polygon(0% 100%, 0% 0%, 88% 0, 89% 31%, 90% 37%, 90% 42%, 89% 46%, 86% 47%, 83% 45%, 83% 100%);}
+          100% {clip-path: polygon(0% 100%, 0 0, 100% 0, 100% 70%, 100% 72%, 99% 81%, 97% 83%, 94% 82.5%, 92% 77%, 92% 100%);}
+        }
+
+        @-webkit-keyframes meter {
+          0% {-webkit-clip-path: polygon(0% 100%, 0 85%, 1% 82%, 3% 79%, 5% 79%, 6% 79%, 7% 80%, 8% 81%, 9% 86%, 9% 100%);}
+          12.5% {-webkit-clip-path: polygon(0% 100%, 0 60%, 4% 55%, 6% 53%, 8% 52%, 9% 51%, 11% 53%, 12% 56%, 12% 61%, 9% 100%);}
+          25% {-webkit-clip-path: polygon(0 100%, 0 31%, 13% 31%, 15% 28%, 18% 27%, 20% 28%, 21% 31%, 21% 35%, 20% 39%, 18% 100%);}
+          37.5% {-webkit-clip-path: polygon(0 100%, 0 0, 27% 7%, 31% 6%, 33% 6%, 35% 8%, 36% 12%, 36% 16%, 35% 22%, 33% 100%);}
+          50% {-webkit-clip-path: polygon(0 100%, 0 0, 49% 0, 51% 1%, 53% 4%, 53% 6%, 53% 9%, 51% 13%, 49% 15%, 49% 100%);}
+          62.5% {-webkit-clip-path: polygon(0 100%, 0 0, 64% 0, 66% 4%, 67% 9%, 67% 13%, 66% 16%, 65% 18%, 63% 18%, 63% 100%);}
+          75% {-webkit-clip-path: polygon(0 100%, 0 0, 76% 1%, 78% 15%, 80% 18%, 81% 22%, 80% 27%, 78% 30%, 76% 30%, 76% 100%);}
+          87.5% {-webkit-clip-path: polygon(0% 100%, 0% 0%, 88% 0, 89% 31%, 90% 37%, 90% 42%, 89% 46%, 86% 47%, 83% 45%, 83% 100%);}
+          100% {-webkit-clip-path: polygon(0% 100%, 0 0, 100% 0, 100% 70%, 100% 72%, 99% 81%, 97% 83%, 94% 82.5%, 92% 77%, 92% 100%);}
+        }
+
+        @keyframes indicator {
+          0% {transform: rotate(-149deg) translate(22px, -5px);}
+          12.5% {transform: rotate(-135deg) translate(22px, -5px);}
+          25% {transform: rotate(-119deg) translate(22px, -5px);}
+          37.5% {transform: rotate(-96deg) translate(22px, -5px);}
+          50% {transform: rotate(-75deg) translate(22px, -5px);}
+          62.5% {transform: rotate(-57deg) translate(22px, -5px);}
+          75% {transform: rotate(-39deg) translate(22px, -5px);}
+          87.5% {transform: rotate(-22deg) translate(22px, -5px);}
+          100% {transform: rotate(0deg) translate(22px, -5px);}
+        }
+
+        @-webkit-keyframes indicator {
+          0% {-webkit-transform: rotate(-149deg) translate(22px, -5px);}
+          12.5% {-webkit-transform: rotate(-135deg) translate(22px, -5px);}
+          25% {-webkit-transform: rotate(-119deg) translate(22px, -5px);}
+          37.5% {-webkit-transform: rotate(-96deg) translate(22px, -5px);}
+          50% {-webkit-transform: rotate(-75deg) translate(22px, -5px);}
+          62.5% {-webkit-transform: rotate(-57deg) translate(22px, -5px);}
+          75% {-webkit-transform: rotate(-39deg) translate(22px, -5px);}
+          87.5% {-webkit-transform: rotate(-22deg) translate(22px, -5px);}
+          100% {-webkit-transform: rotate(0deg) translate(22px, -5px);}
+        }
+
+        .cldAnimBack {
+            -webkit-animation: 120s linear 0s infinite normal animLtoR;
+            animation: 120s linear 0s infinite normal animLtoR;
+        }
+
+        .cldAnimFront {
+            -webkit-animation: 60s linear 0s infinite normal animLtoR;
+            animation: 60s linear 0s infinite normal animLtoR;
+        }
+
+        @keyframes animLtoR {
+            0% {transform: translate(-100%, 0%);}
+            100% {transform: translate(100%, 0%);}
+        }
+
+        @-webkit-keyframes animLtoR {
+            0% {-webkit-transform: translate(-100%, 0%);}
+            100% {-webkit-transform: translate(100%, 0%);}
+        }
+
+        .cldAnimBackFirst {
+            -webkit-animation: 60s linear 0s 1 forwards normal cldAnimFirst;
+            animation: 60s linear 0s 1 forwards normal cldAnimFirst;
+        }
+
+        .cldAnimFrontFirst {
+            -webkit-animation: 30s linear 0s 1 forwards normal cldAnimFirst;
+            animation: 30s linear 0s 1 forwards normal cldAnimFirst;
+        }
+
+        @keyframes cldAnimFirst {
+            0% {transform: translate(0%, 0%);}
+            100% {transform: translate(100%, 0%);}
+        }
+
+        @-webkit-keyframes cldAnimFirst {
+            0% {-webkit-transform: translate(0%, 0%);}
+            100% {-webkit-transform: translate(100%, 0%);}
+        }
+
+        /* LEFT DROPLET */
+    
+    @keyframes dropLeft {
+      0% {transform: translateY(0%);}
+      25% {transform: translateY(19%);}
+      33.33% {transform: translateY(21%);}
+      50% {transform: translateY(28%);}
+      73.33% {transform: translateY(30%);}
+      79% {transform: translateY(35%);}
+      83.33% {transform: translateY(45%);}
+      100% {transform: translateY(80%);}
+    }
+
+    @keyframes dropCenter {
+      0% {transform: translate(-2%, -10%) rotate(0deg);}
+      10% {transform: translate(-1%, -9%) rotate(2deg);}
+      25% {transform: translate(1%, -7%) rotate(10deg);}
+      33.33% {transform: translate(2%, -4%) rotate(12deg);}
+      50% {transform: translate(2%, -2%) rotate(12deg);}
+      73.33% {transform: translate(2%, 3%) rotate(14deg);}
+      83.33% {transform: translate(2%, 15%) rotate(14deg);}
+      90% {transform: translate(2%, 25%) rotate(14deg);}
+      95% {transform: translate(2%, 35%) rotate(14deg);}
+      100% {transform: translate(2%, 50%) rotate(14deg);}
+    }
+
+    @keyframes dropRight {
+      0% {transform: translate(-1%, 0%) rotate(0deg);}
+      10% {transform: translate(0%, 2%) rotate(0deg);}
+      20% {transform: translate(1%, 6%) rotate(0deg);}
+      30% {transform: translate(2%, 20%) rotate(0deg);}
+      50% {transform: translate(2%, 22%) rotate(0deg);}
+      80% {transform: translate(1%, 30%) rotate(0deg);}
+      90% {transform: translate(0%, 49%) rotate(0deg);}
+      100% {transform: translate(0%, 80%) rotate(0deg);}
+    }
+
+    @-webkit-keyframes dropLeft {
+      0% {-webkit-transform: translateY(0%);}
+      25% {-webkit-transform: translateY(19%);}
+      33.33% {-webkit-transform: translateY(21%);}
+      50% {-webkit-transform: translateY(28%);}
+      73.33% {-webkit-transform: translateY(30%);}
+      79% {-webkit-transform: translateY(35%);}
+      83.33% {-webkit-transform: translateY(45%);}
+      100% {-webkit-transform: translateY(80%);}
+    }
+
+    @-webkit-keyframes dropCenter {
+      0% {-webkit-transform: translate(-2%, -10%) rotate(0deg);}
+      10% {-webkit-transform: translate(-1%, -9%) rotate(2deg);}
+      25% {-webkit-transform: translate(1%, -7%) rotate(10deg);}
+      33.33% {-webkit-transform: translate(2%, -4%) rotate(12deg);}
+      50% {-webkit-transform: translate(2%, -2%) rotate(12deg);}
+      73.33% {-webkit-transform: translate(2%, 3%) rotate(14deg);}
+      83.33% {-webkit-transform: translate(2%, 15%) rotate(14deg);}
+      90% {-webkit-transform: translate(2%, 25%) rotate(14deg);}
+      95% {-webkit-transform: translate(2%, 35%) rotate(14deg);}
+      100% {-webkit-transform: translate(2%, 50%) rotate(14deg);}
+    }
+
+    @-webkit-keyframes dropRight {
+      0% {-webkit-transform: translate(-1%, 0%) rotate(0deg);}
+      10% {-webkit-transform: translate(0%, 2%) rotate(0deg);}
+      20% {-webkit-transform: translate(1%, 6%) rotate(0deg);}
+      30% {-webkit-transform: translate(2%, 20%) rotate(0deg);}
+      50% {-webkit-transform: translate(2%, 22%) rotate(0deg);}
+      80% {-webkit-transform: translate(1%, 30%) rotate(0deg);}
+      90% {-webkit-transform: translate(0%, 49%) rotate(0deg);}
+      100% {-webkit-transform: translate(0%, 80%) rotate(0deg);}
+    }
+        
+    </style>
+</head>
+
+<body>
+    <div id="csTracking" style="display:none;">
+        <!-- Line Item %eaid! ==  Creative ID %ecid! -->
+    </div>
+    <div id="labAd">
+        <div id="container" class="container">
+            <div id="sky" class="adSize"></div>
+            <div id="CloudsBack" class="adSize" style="opacity: 0.6;"></div>
+            <div id="CloudsFront" class="adSize" style="opacity: 0.8;"></div>
+            <div id="bg" class="adSize"></div>
+            <div id="waterFlow" class="adSize"></div>
+            <div id="fg" class="adSize"></div>
+
+            <div id="dropContainer" class="adSize">
+                <div id="dropLeft1" class="drops dropLeft"></div>
+                <div id="dropLeft2" class="drops dropLeft"></div>
+                <div id="dropLeft3" class="drops dropLeft"></div>
+                <div id="dropCenter1" class="drops dropCenter"></div>
+                <div id="dropCenter2" class="drops dropCenter"></div>
+                <div id="dropCenter3" class="drops dropCenter"></div>
+                <div id="dropRight1" class="drops dropRight"></div>
+                <div id="dropRight2" class="drops dropRight"></div>
+            </div>
+
+            <div id="glare" class="adSize"></div>
+            <div id="shine"></div>
+
+            <div id="index"></div>
+            <div id="meter"></div>
+            <div id="indicator_container">
+                <div id="indicator"></div>
+            </div>
+            <div id="thirstlevel"></div>
+
+        </div>
+
+        <svg>
+            <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+              <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.06 0.08"></feTurbulence>
+              <feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
+              <!-- <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" 
+              keyTimes="0;0.5;1" values="0.04 0.06;0.02 0.04;0.04 0.06" repeatCount="indefinite" fill="freeze"/> -->
+            </filter>
+        </svg>
+
+        <!-- <img src = "guide.jpg" width=300 height=250 style="position:absolute; opacity:0; top: 0; left: 0;"> -->
+    </div>
+
+    <!-- START NO REFRESH CODE -->
+    <script type="text/javascript">
+        try{
+          parent.window.TWC=parent.window.TWC || {};
+          parent.window.TWC.adUtils=parent.window.TWC.adUtils || {};
+          parent.window.TWC.adUtils.killRefresh= parent.window.TWC.adUtils.killRefresh || [];
+          parent.TWC.adUtils.killRefresh.push('%%PATTERN:pos%%');}catch(err){console.log(err);}
+    </script>
+    <!-- END NO REFRESH CODE -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
+    </script>
+    <script type="text/javascript">
+        var labAd = {
+            dir: "https://s.w-x.co/cl/nestle/tcl3758-cp-im-ani/",
+            width: 300,
+            height: 250,
+            defaultImg: "IM-cld-d-default",
+            prefix: "All-300x250-",
+            alt: "NESTLE WATERS",
+            dpr: window.devicePixelRatio,
+            data: {
+                apiKey: "cff85d3c8d22a35c99875a08c084de46",
+                request: 0,
+                requestSuccess: 0,
+                status: false
+            },
+            meta: {
+                jiraID: 'tcl3758', //Example: Future builds will have tcl
+                projectName: 'Nestle Waters BlueTriton Brands (Severe Weather - Hydration- CREATIVE 3 )',
+                product: 'Dynamic Creative Banner',
+                advertiser: 'NESTLE WATERS', // Ex: 'mcdonalds'
+                placement: '', // Ex: 'ros-shopper-moms
+                created: '05-02-2022', // Ex: '08-23-2018'
+                modified: '05-04-2022', // change when base code changes to current date of change
+                design: 'eciprian', // Ex: 'coreyd'
+                dev: 'JGatchalian' // Ex: 'dks'
+            },
+            product: {
+                productName: 'Dynamic Creative Banner', // Abrev. + Full name of Product
+                version: '1.0', //This will reflect the Github Version on the stable branch
+                type: 'static', // 'static', 'animated'
+                interactive: '', // EX: 'locator', 'vertical-video', 'swipe-carousel', etc.
+                adaptor: 'base-conditions', //EX: 'temp-range', 'temp-comparison', 'countdown', etc.
+            },
+            platforms: ['web', 'ios', 'android', 'mw'], // 'ios', 'android', 'web', 'mw'
+            ids: { // various id strings for this ad
+                creative: "%ecid!",
+                lineItem: "%eaid!",
+                loc: "%%PATTERN:zip%%",
+                lat: "%%PATTERN:lat%%",
+                long: "%%PATTERN:lon%%",
+                cnd: "%%PATTERN:cnd%%",
+                sev: "%%PATTERN:sev%%",
+                dynght: "%%PATTERN:dynght%%"
+            },
+            errors: [],
+            isMobile: false,
+            tracking: {
+                dfpClick: "%%CLICK_URL_UNESC%%",
+                pixel: "https://secure.insightexpressai.com/adServer/adServerESI.aspx?script=false&bannerID=9397331&rnd=%%CACHEBUSTER%%&redir=https://secure.insightexpressai.com/adserver/1pixel.gif",
+                clickTAG: "https://www.icemountainwater.com/shopping/where-to-buy/?utm_source=digital&utm_medium=digital&utm_campaign=_stockup_q22022&utm_content=&uni_track=digital_digital__stockup_q22022"
+            },
+            vars: {},
+            testVars: {
+                loc: "40210",
+                lat: "51.2277",
+                long: "6.7735",
+                sevTest: 'winds',
+                cndTest: 'cld',
+                dynghtTest: 'D'
+            },
+            testMode: false,
+            weatherCond: ''
+        }
+
+        $(function () {
+            csWritePixel();
+            try {
+                // jump into testMode for DFP preview
+                //if (window.location.origin == 'http://partner.googleadservices.com') {labAd.testMode = true};
+                if (!window.location.origin)
+                    window.location.origin = window.location.protocol + "//" + window.location.host;
+                if (/(file|wideout|localhost)/i.test(window.location.origin)) labAd.testMode = true;
+                // adjust for testMode
+                if (labAd.testMode) {
+                    labAd.ids.loc = labAd.testVars.loc;
+                    labAd.ids.lat = labAd.testVars.lat;
+                    labAd.ids.long = labAd.testVars.long;
+
+                    labAd.ids.sev = labAd.testVars.sevTest;
+                    labAd.ids.cnd = labAd.testVars.cndTest;
+                    labAd.ids.dynght = labAd.testVars.dynghtTest;
+
+                    labAd.tracking.dfpClick = "";
+                    if (parent.testProps) {
+                        labAd.ids.sev = parent.testProps.wxIcon;
+                        labAd.ids.cnd = parent.testProps.wxIcon;
+                        labAd.ids.dynght = parent.testProps.curTime;
+                    }
+                };
+
+                // define console for browsers that do not support it so no errors are thrown
+                if (!window.console) console = {
+                    log: function () { }
+                };
+
+                setTimeout(showAd, 500);
+
+                // set click handlers
+                $('#labAd').click(function (event) {
+                    exitClick();
+                });
+
+                console.log(labAd);
+            } catch (err) {
+                labAd.errors.push(err);
+                showDefault(err.message);
+                console.log(labAd.errors);
+            }
+        });
+
+        var numberofObject = 3;
+        var images;
+        var loadedImage;
+
+        function showAd() {
+            try {
+                // labAd.vars = adVars;
+                for (var o = 1; o <= numberofObject; o++) {
+                    CloudsBack.innerHTML += '<div id="cloudBack' + o + '" class="adSize cloudBack"> </div>';
+                    CloudsFront.innerHTML += '<div id="cloudFront' + o + '" class="adSize cloudFront"> </div>';
+                }
+
+                images = [
+                    labAd.dir + labAd.prefix + "Sky" + ".png",
+                    labAd.dir + labAd.prefix + "Clouds-Back" + ".png",
+                    labAd.dir + labAd.prefix + "Clouds-Front" + ".png",
+                    labAd.dir + "IM-cld-d" + ".png",
+                    labAd.dir + "IceMountain-300x250-Bottle_Copy_CTA" + ".png",
+                    labAd.dir + labAd.prefix + "Sun-Glare" + ".png",
+                    labAd.dir + labAd.prefix + "Index" + ".png",
+                    labAd.dir + labAd.prefix + "Meter-High" + ".png",
+                    labAd.dir + labAd.prefix + "Thirst-Levels" + ".png",
+                    labAd.dir + labAd.prefix + "Indicator" + ".png",
+                    labAd.dir + labAd.prefix + "CTA-Shine-Effect" + ".png",
+                    labAd.dir + labAd.prefix + "Moving-Droplet-Left" + ".png",
+                    labAd.dir + labAd.prefix + "Moving-Droplet-Center" + ".png",
+                    labAd.dir + labAd.prefix + "Moving-Droplet-Right" + ".png",
+                ];
+
+                cloudBack1.classList.add('fromCenter');
+                cloudBack1.classList.add('fromLeft');
+                cloudBack3.classList.add('fromLeft');
+                cloudFront1.classList.add('fromCenter');
+                cloudFront2.classList.add('fromLeft');
+                cloudFront3.classList.add('fromLeft');
+
+                loadedImage = 0;
+                for (var i = 0; i <= images.length - 1; i++) {
+                    imageObj = new Image();
+                    imageObj.src = images[i];
+                    imageObj.addEventListener("load", iLoad, false)
+                }
+            } catch (err) {
+                labAd.errors.push(err);
+                showDefault(err.message);
+                console.log(labAd.errors);
+            }
+        }
+
+        function iLoad() {
+            loadedImage++;
+            if (images.length == loadedImage) {
+                sky.style.backgroundImage = "url('" + images[0] + "')";
+                cloudBack1.style.backgroundImage = "url('" + images[1] + "')";
+                cloudBack2.style.backgroundImage = "url('" + images[1] + "')";
+                cloudBack3.style.backgroundImage = "url('" + images[1] + "')";
+                cloudFront1.style.backgroundImage = "url('" + images[2] + "')";
+                cloudFront2.style.backgroundImage = "url('" + images[2] + "')";
+                cloudFront3.style.backgroundImage = "url('" + images[2] + "')";
+                bg.style.backgroundImage = "url('" + images[3] + "')";
+                waterFlow.style.backgroundImage = "url('" + images[3] + "')";
+                fg.style.backgroundImage = "url('" + images[4] + "')";
+                glare.style.backgroundImage = "url('" + images[5] + "')";
+                index.style.backgroundImage = "url('" + images[6] + "')";
+                meter.style.backgroundImage = "url('" + images[7] + "')";
+                thirstlevel.style.backgroundImage = "url('" + images[8] + "')";
+                indicator.style.backgroundImage = "url('" + images[9] + "')";
+                shine.style.backgroundImage = "url('" + images[10] + "')";
+                dropLeft1.style.backgroundImage = "url('" + images[11] + "')";
+                dropLeft2.style.backgroundImage = "url('" + images[11] + "')";
+                dropLeft3.style.backgroundImage = "url('" + images[11] + "')";
+                dropCenter1.style.backgroundImage = "url('" + images[12] + "')";
+                dropCenter2.style.backgroundImage = "url('" + images[12] + "')";
+                dropCenter3.style.backgroundImage = "url('" + images[12] + "')";
+                dropRight1.style.backgroundImage = "url('" + images[13] + "')";
+                dropRight2.style.backgroundImage = "url('" + images[13] + "')";
+
+                setTimeout(startAnimation, 100)
+            }
+        }
+
+        //Animation START
+        function startAnimation() {
+            console.log("startAnim");
+            setTimeout(function () {
+                container.style.visibility = 'visible';
+                startAnim();
+            }, 500)
+        }
+
+        function startAnim() {
+
+            indicator_container.classList.add('indicatorAnim');
+            meter.classList.add('meterAnim');
+
+            gsap.to("#sea-filter", { 
+                duration: 30, 
+                attr: { baseFrequency: "0.02 0.04" }, 
+                yoyo: true,
+                repeat: -1,
+                ease: "none"
+            });
+
+            //cloudAnimation
+            cloudBack1.classList.add('cldAnimBackFirst');
+            cloudBack2.classList.add('cldAnimBack');
+            setTimeout(function () {
+                cloudBack3.classList.add('cldAnimBack');
+            }, 60000)
+
+            cloudFront1.classList.add('cldAnimFrontFirst');
+            cloudFront2.classList.add('cldAnimFront');
+            setTimeout(function () {
+                cloudFront3.classList.add('cldAnimFront');
+            }, 30000)
+
+
+            //shine after n seconds
+            setTimeout(function () {
+                var counter = 0;
+                var i = setInterval(function(){
+                    ctaShine();
+                    counter++;
+                    if(counter === 3) {
+                        clearInterval(i);
+                    }
+                }, 1600);
+            }, 14500)
+        }
+
+        function ctaShine() {
+            shine.style.transform = "translateX(46px)";
+            shine.style.opacity = "1";
+            setTimeout(function () {
+                shine.style.opacity = "0";
+                setTimeout(function () {
+                    shine.style.transform = "translateX(0px)";
+                }, 250)
+            }, 600)
+        }
+
+        function exitClick() {
+            console.log("exitClick");
+            window.open(labAd.tracking.dfpClick + labAd.tracking.clickTAG, "_blank");
+        }
+
+
+        function toTitleCase(str) {
+            return str.replace(/\w\S*/g, function (txt) {
+                return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            });
+        }
+
+        function showDefault(reason) {
+            try {
+                $('#labAd').css({
+                    'background': 'url(' + labAd.dir + labAd.defaultImg + ".jpg" + ') no-repeat 0 0'
+                });
+                $('#labAd').css({
+                    'visibility': 'visible',
+                    'opacity': '1',
+                    'background-size': '300px 250px'
+                });
+                $('#labAd').css('opacity', '1');
+                $('#labAd').append('<span style="display:none;">' + reason + '</span>');
+            } catch (err) {
+                labAd.errors.push(err);
+                console.log(labAd.errors);
+            }
+        }
+
+        function csWritePixel() {
+            if (labAd.tracking.pixel != "") {
+                var tDiv = document.createElement("div");
+                tDiv.innerHTML = "<img src=" + labAd.tracking.pixel + " height='1' width='1' border='0' style='display:none'>";
+                document.body.appendChild(tDiv);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
