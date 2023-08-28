@@ -1,0 +1,390 @@
+*{
+    user-select: none;
+}
+
+body{
+    /* background-color: rgba(41,50,65,.75); */
+}
+
+.disclaimer{
+    display: none;
+}
+
+.monsBold{
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+.latoReg{
+    font-family: 'Lato';
+    font-weight: 400;
+}
+.latoBold{
+    font-family: 'Lato';
+    font-weight: 700;
+}
+.adSlot{
+    background-color: #e4e4e4;
+    border: 1px solid #4e596b;
+    color: #4e596b;
+    font-size: 18px;
+    box-sizing: border-box;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.abs{
+    position: absolute;
+}
+.rel{
+    position: relative;
+}
+
+.navItem{
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.groupItem{
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.imgdiv{
+    background-color: #ffffff;
+    border-left: 4px solid #99261e;
+    border-top: 1px solid #e0dfdd;
+    border-bottom: 1px solid #e0dfdd;
+    border-right: 1px solid #e0dfdd;
+    box-shadow: 0 4px 2px -2px #e0dfdd;
+    padding: 32px;
+    width: 552px;
+    height: auto;
+    /* width: 64.5%;
+    height: 22%; */
+    margin-top: -64px;
+}
+.imgdivHeader{
+    font-size: 28px;
+    margin-bottom: -1px;
+}
+.imgdivSub{
+    font-size: 16px;
+    margin-bottom: 0px;
+}
+.contentImg{
+    width: 93%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.img-best{
+    width: 96px;
+    height: auto;
+    float: left;
+}
+.title-best{
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: 90%;
+    font-size: 16px;
+}
+
+.list-topic{
+    border-top: 1px solid #e0dfdd;
+    padding-left: 0;
+    margin-bottom: 30px;
+    width: 90%;
+}
+.img-topic{
+    width: 248px;
+    height: auto;
+    float: left;
+}
+.title-topic{
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    width: 90%;
+    font-size: 20px;
+}
+
+.section{
+    background-color: rgba(0,0,0,.05);
+    padding-bottom: 10px;
+}
+.img-sec{
+    width: 80%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.title-sec{
+    margin-top: 20px;
+    width: 80%;
+    font-size: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 24px;
+}
+
+.title-explore{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 90%;
+    font-size: 16px;
+    text-align: center;
+}
+
+#overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(41,50,65,.75);
+}
+
+#mainContainer{
+    background-color: #ffffff;
+}
+
+#messageCont{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: #ffffff;
+}
+#message{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 5px;
+}
+
+#slot-970x250{
+    width: 970px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+#placeholderName-970x250{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#slot-728x90{
+    width: 728px;
+    height: 90px;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+#placeholderName-728x90{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#slot-300x600{
+    width: 300px !important;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+#placeholderName-300x600{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#slot-300x250{
+    width: 300px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+#placeholderName-300x250{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#navDiv{
+    border-top: 1px solid #e0dfdd;
+    border-bottom: 1px solid #e0dfdd;
+    box-shadow: 0 4px 2px -2px #e0dfdd;
+}
+#navBar{
+    height: 100%;
+    font-size: 14px;
+}
+#navWrapper{
+    display: inline-flex;
+    flex-direction: row;
+}
+#hamIcon{
+    font-size: 35px;
+}
+#navLogo{
+    top: 6px;
+    margin-left: 20px;
+}
+#navItemGroup{
+    flex-direction: row;
+    grid-template-columns: 55px 110px 65px 110px 110px;
+    display: inline-grid;
+    text-align: center;
+    
+    margin-top: 12px;
+    right: 20px;
+}
+
+#best, #explore{
+    height: auto;
+    background-color: #fafafa;
+    border-top: 10px solid rgba(0,0,0,.95);
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+#ad300-600, #ad300-250{
+    height: auto;
+    /* background-color: #fafafa; */
+}
+
+/* IFRAMES */
+#iframe-300x600{
+    position: absolute;
+    width: 300px;
+    height: 600px;
+    top: -1px;
+    left: -1px;
+}
+#iframe-300x250{
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    top: -1px;
+    left: -1px;
+}
+#iframe-728x90{
+    position: absolute;
+    width: 728px;
+    height: 90px;
+    top: -1px;
+    left: -1px;
+}
+#iframe-970x250{
+    position: absolute;
+    width: 970px;
+    height: 250px;
+    top: -1px;
+    left: -1px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 1441px) {
+    #mainContainer{
+        width: 1440px;
+    }
+    #navItemGroup{
+        right: 780px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .toRemove{
+        display: none;
+    }
+    #navItemGroup{
+        grid-template-columns: 55px;
+        /* right: 122px; */
+    }
+    #best, #explore{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 970px) {
+    #cont-970x250{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .imgdiv{
+        width: 100%;
+    }
+    .contentImg{
+        width: 100%;
+    }
+    .img-sec{
+        margin-top: 25px;
+    }
+
+    .img-topic{
+        width: 140px;
+    }
+    .title-topic{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 728px) {
+    #cont-728x90{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #search{
+        display: none;
+    }
+    #navWrapper{
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+    .imgdivHeader{
+        font-size: 22px;
+    }
+    .imgdivSub{
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    .title-topic {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    #mainContainer{
+        display: none;
+    }
+    #messageCont{
+        display: block;
+    }
+}
