@@ -1,0 +1,340 @@
+*{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.disclaimer{
+    display: none;
+}
+
+.abs{
+    position: absolute !important;
+}
+.rel{
+    position: relative;
+}
+.contain{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.monsLight{
+    font-family: 'Montserrat';
+    font-weight: 300;
+}
+.monsMed{
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
+.monsBold{
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+.listItem{
+    height: 30px;
+    padding-top: 4px;
+    width: 80%;
+    cursor: pointer;
+}
+.listItem:hover{
+    border-bottom: 1px solid rgba(204,204,204,.5);
+}
+.listArrow{
+    width: 14px;
+    height: 7px;
+    position: absolute;
+    right: 70px;
+    margin-top: -14px;
+    pointer-events: none;
+}
+.mobileListArrow{
+    width: 14px;
+    height: 7px;
+    position: absolute;
+    right: 92px;
+    margin-top: -14px;
+    pointer-events: none;
+}
+.choiceItem, .mobileChoiceItem{
+    height: 20px;
+    width: 280px;
+    cursor: pointer;
+}
+.choiceItem:hover{
+    border-bottom: 1px solid rgba(204,204,204,.5);
+}
+.mobileChoiceItem:hover{
+    border-bottom: 1px solid rgba(204,204,204,.5);
+}
+
+#mockFrame, #iframeLoader{
+    position: absolute !important;
+    left: 0px;
+    /* width: calc(100vw - 400px) !important; */
+
+    transform: none !important;
+}
+.expanded{
+    width: calc(100vw - 400px) !important;
+    height: 100vh !important;
+    visibility: visible !important;
+    left: 400px !important;
+    top: 0 !important;
+}
+.collapsed{
+    width: calc(100vw - 110px) !important;
+    height: 100vh !important;
+    visibility: visible !important;
+    left: 110px !important;
+    top: 0 !important;
+}
+.tempPos{
+    width: calc(100vw - 400px) !important;
+    visibility: hidden !important;
+    left: 399px !important;
+}
+
+.loader{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: auto;
+}
+
+#container{
+    /* background-color: rgba(41,50,65,.75); */
+    overflow: auto !important;
+    height: 100% !important;
+    visibility: hidden;
+}
+#navBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #293241;
+    width: 400px;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#navLogo{
+    top: 30px;
+    left: 35px;
+    width: 169px;
+    /* width: 169px; */
+    height: 54px;
+    margin: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#nav-expand{
+    width: 7px;
+    height: 14px;
+    top: 50%;
+    left: 100%;
+
+    margin-left: 152px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+}
+#nav-collapse{
+    width: 7px;
+    height: 14px;
+    top: 50%;
+    left: 100%;
+
+    margin-left: 152px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+#navFooter{
+    margin-top: 15px;
+    color: #ffffff;
+    font-size: 10px;
+    bottom: 0;
+    left: 150px;
+    /* transform: translateX(-50%); */
+}
+
+#navCopy{
+    width: 330px;
+    height: auto;
+    left: 35px;
+    margin-top: 100px;
+}
+#navTitle{
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: .2rem;
+}
+#navSubtitle{
+    color: #ffffff;
+    font-size: 14px;
+}
+#navViews{
+    margin-top: 50px;
+    width: 330px;
+    height: 70px;
+    left: 35px;
+    border-top: 1px solid rgba(204,204,204,.5);
+    border-bottom: 1px solid rgba(204,204,204,.5);
+}
+#views{
+    color: #ffffff;
+    font-size: 14px;
+    margin-left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#phone{
+    width: 36px;
+    height: 49px;
+    top: 60%;
+    transform: translateY(-50%);
+    right: 100px;
+    cursor: pointer;
+}
+#laptop{
+    width: 39px;
+    height: 36px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    cursor: pointer;
+}
+
+#navList{
+    height: calc(100vh - 29rem);
+    overflow-y: auto;
+    color: #ffffff;
+    font-size: 14px;
+    padding-left: 15px;
+}
+#content1, #content2, #content3, #content4, #content5{
+    display: block;
+    padding-left: 30px;
+    line-height: 14px;
+    padding-top: 10px;
+}
+
+#mobileHeader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 120px;
+    background-color: #293241;
+    display: none;
+}
+#mobileHeaderLogo{
+    position: absolute;
+    left: 35px;
+    top: 48%;
+    transform: translateY(-50%);
+    width: 169px;
+    height: 54px;
+}
+#mobileNav{
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    width: 100vw;
+    height: calc(100% - 120px);
+    background-color: #293241;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+}
+#menu{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 25px;
+    cursor: pointer;
+}
+#close{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 25px;
+    display: none;
+    cursor: pointer;
+}
+
+#mobileNavCopy{
+    width: 330px;
+    height: auto;
+    left: 35px;
+    margin-top: 30px;
+}
+#mobileNavTitle{
+    color: #ffffff;
+    font-size: 30px;
+    margin-bottom: .2rem;
+}
+#mobileNavSubtitle{
+    color: #ffffff;
+    font-size: 14px;
+}
+
+#mobileNavList{
+    height: 43vh;
+    overflow-y: auto;
+    color: #ffffff;
+    font-size: 14px;
+    padding-left: 8px;
+}
+#mobileContent1, #mobileContent2, #mobileContent3, #mobileContent4, #mobileContent5{
+    display: block;
+    padding-left: 30px;
+    line-height: 14px;
+    padding-top: 10px;
+}
+#mobileNavFooter{
+    margin-top: 40px;
+    color: #ffffff;
+    font-size: 10px;
+    bottom: 0;
+    left: 40%;
+    /* transform: translateX(-50%); */
+}
+
+@media only screen and (max-height: 540px) {
+    #navList{
+        height: 50vh;
+    }
+    #mobileNavList{
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #navBar{
+        display: none;
+    }
+    #mobileHeader{
+        display: block;
+    }
+    .expanded{
+        width: 100vw !important;
+        height: calc(100% - 120px) !important;
+        visibility: visible !important;
+        left: 0px !important;
+        top: 120px !important;
+    }
+    .collapsed{
+        width: 100vw !important;
+        height: calc(100% - 120px) !important;
+        visibility: visible !important;
+        left: 0px !important;
+        top: 120px !important;
+    }
+}
